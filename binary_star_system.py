@@ -42,11 +42,11 @@ bc_o, = ax.plot(x3_p[0],y3_p[0], linestyle="--",color="gold", lw=1.5)
 
 def binary_star(i):
   s1.set_data(x1_p[i], y1_p[i])
-  s1_o.set_data(x1_p[:i], y1_p[:i])                          
+  s1_o.set_data(x1_p[:i+1], y1_p[:i+1])                          
   s2.set_data(x2_p[i], y2_p[i])
-  s2_o.set_data(x2_p[:i], y2_p[:i])                           
+  s2_o.set_data(x2_p[:i+1], y2_p[:i+1])                           
   bc.set_data(x3_p[i], y3_p[i]) 
-  bc_o.set_data(x3_p[:i], y3_p[:i])                     
+  bc_o.set_data(x3_p[:i+1], y3_p[:i+1])                     
   return s1, s2, s1_o, s2_o, bc, bc_o,
 
 
