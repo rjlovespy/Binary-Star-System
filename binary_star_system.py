@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-theta=-np.pi/4
+theta=-np.pi/6
 m1, m2 = 1, 5
 a1, b1 = 15, 10
 a2, b2 = 8, 4
@@ -31,7 +31,7 @@ y3_p = -x3*np.sin(theta)+y3*np.cos(theta)
 
 
 fig = plt.figure()
-ax = plt.axes(xlim=(-30,30), ylim=(-30,30))
+ax = plt.axes(xlim=(-25,20), ylim=(-20,15))
 s1, = ax.plot(x1_p[0], y1_p[0], marker='o', markersize=30, markerfacecolor='red')
 s1_o, = ax.plot(x1_p[0], y1_p[0], color='lime', lw=2)
 s2, = ax.plot(x2_p[0], y2_p[0], marker='o', markersize=40, markerfacecolor='blue')
@@ -55,15 +55,13 @@ Speed of animation governs by:
     1. Frames-Stations
     2. Interval-Number of milliseconds train remains at station
 """
-anim=ani.FuncAnimation(fig, binary_star, frames=len(t1), interval= 20, blit=True, repeat=True)
+anime = ani.FuncAnimation(fig, binary_star, frames=len(t1), interval= 20, blit=True, repeat=True)
 
 
 fig.patch.set_facecolor('k')
-fig.suptitle("Binary Star System when m2 = 5m1", color="fuchsia")
-plt.axis(False)
-#plt.rcParams["animation.ffmpeg_path"]= r'C:/ffmpeg/bin/ffmpeg.exe' 
-#writervideo = ani.FFMpegWriter(fps=20, metadata={"Artist":"Rishikesh Jha"},bitrate=10000) 
-#anim.save("Binary Star System.mp4", writer=writervideo)
-plt.legend(loc="best")
-plt.annotate("Courtesy of Rishikesh Jha", (27,-29), color="fuchsia")
+ax.set_title(r"Binary Star System when $m_2 = 5m_1$", color="fuchsia")
+ax.axis(False) 
+ax.annotate("Courtesy of Rishikesh Jha", (15,-15), color="fuchsia")
+plt.legend(loc="upper left")
+# anime.save("binary_star_system.gif")
 plt.show()
